@@ -1,0 +1,4 @@
+URL = "https://www.westernsydney.edu.au/"
+ASH_NAMESPACE
+AVAILABILITY_METRIC
+LATENCY_METRIC
