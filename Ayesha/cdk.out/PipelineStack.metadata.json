@@ -34,7 +34,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline": [
+  "/PipelineStack/pipeline/Pipeline": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {
@@ -81,7 +81,7 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/CodeBuildActionRole": [
+  "/PipelineStack/pipeline/CodeBuildActionRole": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {
@@ -179,7 +179,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/ArtifactsBucket": [
+  "/PipelineStack/pipeline/Pipeline/ArtifactsBucket": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {
@@ -192,7 +192,7 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Role": [
+  "/PipelineStack/pipeline/Pipeline/Role": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {
@@ -244,10 +244,10 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Resource": [
+  "/PipelineStack/pipeline/Pipeline/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipeline555D92F1"
+      "data": "pipelinePipeline4163A4B1"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -257,10 +257,10 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/CodeBuildActionRole/Resource": [
+  "/PipelineStack/pipeline/CodeBuildActionRole/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineCodeBuildActionRole0137EDEA"
+      "data": "pipelineCodeBuildActionRole4D1FDB53"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -270,7 +270,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/CodeBuildActionRole/DefaultPolicy": [
+  "/PipelineStack/pipeline/CodeBuildActionRole/DefaultPolicy": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": "*"
@@ -308,7 +308,7 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/UpdatePipeline/SelfMutation": [
+  "/PipelineStack/pipeline/UpdatePipeline/SelfMutation": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {}
@@ -322,10 +322,10 @@
       "data": {}
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/ArtifactsBucket/Resource": [
+  "/PipelineStack/pipeline/Pipeline/ArtifactsBucket/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineArtifactsBucketB51ECEF4"
+      "data": "pipelinePipelineArtifactsBucketC2CD5B5E"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -335,7 +335,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/ArtifactsBucket/Policy": [
+  "/PipelineStack/pipeline/Pipeline/ArtifactsBucket/Policy": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {
@@ -343,10 +343,10 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Role/Resource": [
+  "/PipelineStack/pipeline/Pipeline/Role/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineRole3373CA60"
+      "data": "pipelinePipelineRole7016E5DF"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -356,7 +356,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Role/DefaultPolicy": [
+  "/PipelineStack/pipeline/Pipeline/Role/DefaultPolicy": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": "*"
@@ -402,10 +402,10 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
+  "/PipelineStack/pipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineCodeBuildActionRoleDefaultPolicyA68E9D34"
+      "data": "pipelineCodeBuildActionRoleDefaultPolicyE3C51929"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -415,7 +415,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Role": [
+  "/PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {
@@ -491,10 +491,10 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Resource": [
+  "/PipelineStack/pipeline/UpdatePipeline/SelfMutation/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineUpdatePipelineSelfMutation1BCDA70B"
+      "data": "pipelineUpdatePipelineSelfMutation14A96D2F"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -504,10 +504,10 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/ArtifactsBucket/Policy/Resource": [
+  "/PipelineStack/pipeline/Pipeline/ArtifactsBucket/Policy/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineArtifactsBucketPolicy755078C8"
+      "data": "pipelinePipelineArtifactsBucketPolicy10A41055"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -517,10 +517,10 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Role/DefaultPolicy/Resource": [
+  "/PipelineStack/pipeline/Pipeline/Role/DefaultPolicy/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineRoleDefaultPolicyB0973B94"
+      "data": "pipelinePipelineRoleDefaultPolicy16010F3E"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -530,7 +530,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject": [
+  "/PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {}
@@ -544,10 +544,10 @@
       "data": {}
     }
   ],
-  "/PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Role/Resource": [
+  "/PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineUpdatePipelineSelfMutationRoleC89F0F7C"
+      "data": "pipelineUpdatePipelineSelfMutationRole91820177"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -557,7 +557,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy": [
+  "/PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": "*"
@@ -627,7 +627,7 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Role": [
+  "/PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Role": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": {
@@ -679,10 +679,10 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Resource": [
+  "/PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineBuildsynthCdkBuildProject399F0FDA"
+      "data": "pipelinePipelineBuildSynthCdkBuildProject4237770A"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -692,10 +692,10 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+  "/PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineUpdatePipelineSelfMutationRoleDefaultPolicyF79844B0"
+      "data": "pipelineUpdatePipelineSelfMutationRoleDefaultPolicy095404B8"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -705,10 +705,10 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Role/Resource": [
+  "/PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineBuildsynthCdkBuildProjectRole001BC4AF"
+      "data": "pipelinePipelineBuildSynthCdkBuildProjectRole0C39D18F"
     },
     {
       "type": "aws:cdk:creationStack",
@@ -718,7 +718,7 @@
       ]
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Role/DefaultPolicy": [
+  "/PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy": [
     {
       "type": "aws:cdk:analytics:construct",
       "data": "*"
@@ -764,10 +764,10 @@
       }
     }
   ],
-  "/PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+  "/PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
     {
       "type": "aws:cdk:logicalId",
-      "data": "AppPipelineBuildsynthCdkBuildProjectRoleDefaultPolicy66DDDC06"
+      "data": "pipelinePipelineBuildSynthCdkBuildProjectRoleDefaultPolicyB3981181"
     },
     {
       "type": "aws:cdk:creationStack",

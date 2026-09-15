@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from ayesha.pipeline_stack import MyPipelineStack
+from ayesha.pipeline_stack2 import PipelineStack
 
 
 app = cdk.App()
-MyPipelineStack(app, "PipelineStack",
+PipelineStack(app, "PipelineStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.

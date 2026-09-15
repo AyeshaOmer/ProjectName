@@ -1,6 +1,6 @@
 {
  "Resources": {
-  "AppPipelineArtifactsBucketB51ECEF4": {
+  "pipelinePipelineArtifactsBucketC2CD5B5E": {
    "Type": "AWS::S3::Bucket",
    "Properties": {
     "BucketEncryption": {
@@ -22,14 +22,14 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain",
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/ArtifactsBucket/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/ArtifactsBucket/Resource"
    }
   },
-  "AppPipelineArtifactsBucketPolicy755078C8": {
+  "pipelinePipelineArtifactsBucketPolicy10A41055": {
    "Type": "AWS::S3::BucketPolicy",
    "Properties": {
     "Bucket": {
-     "Ref": "AppPipelineArtifactsBucketB51ECEF4"
+     "Ref": "pipelinePipelineArtifactsBucketC2CD5B5E"
     },
     "PolicyDocument": {
      "Statement": [
@@ -47,7 +47,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AppPipelineArtifactsBucketB51ECEF4",
+          "pipelinePipelineArtifactsBucketC2CD5B5E",
           "Arn"
          ]
         },
@@ -57,7 +57,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AppPipelineArtifactsBucketB51ECEF4",
+             "pipelinePipelineArtifactsBucketC2CD5B5E",
              "Arn"
             ]
            },
@@ -72,10 +72,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/ArtifactsBucket/Policy/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/ArtifactsBucket/Policy/Resource"
    }
   },
-  "AppPipelineRole3373CA60": {
+  "pipelinePipelineRole7016E5DF": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -92,10 +92,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/Role/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/Role/Resource"
    }
   },
-  "AppPipelineRoleDefaultPolicyB0973B94": {
+  "pipelinePipelineRoleDefaultPolicy16010F3E": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -117,7 +117,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AppPipelineArtifactsBucketB51ECEF4",
+          "pipelinePipelineArtifactsBucketC2CD5B5E",
           "Arn"
          ]
         },
@@ -127,7 +127,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AppPipelineArtifactsBucketB51ECEF4",
+             "pipelinePipelineArtifactsBucketC2CD5B5E",
              "Arn"
             ]
            },
@@ -142,7 +142,7 @@
        "Effect": "Allow",
        "Resource": {
         "Fn::GetAtt": [
-         "AppPipelineCodeBuildActionRole0137EDEA",
+         "pipelineCodeBuildActionRole4D1FDB53",
          "Arn"
         ]
        }
@@ -150,23 +150,23 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AppPipelineRoleDefaultPolicyB0973B94",
+    "PolicyName": "pipelinePipelineRoleDefaultPolicy16010F3E",
     "Roles": [
      {
-      "Ref": "AppPipelineRole3373CA60"
+      "Ref": "pipelinePipelineRole7016E5DF"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/Role/DefaultPolicy/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/Role/DefaultPolicy/Resource"
    }
   },
-  "AppPipeline555D92F1": {
+  "pipelinePipeline4163A4B1": {
    "Type": "AWS::CodePipeline::Pipeline",
    "Properties": {
     "ArtifactStore": {
      "Location": {
-      "Ref": "AppPipelineArtifactsBucketB51ECEF4"
+      "Ref": "pipelinePipelineArtifactsBucketC2CD5B5E"
      },
      "Type": "S3"
     },
@@ -174,7 +174,7 @@
     "RestartExecutionOnUpdate": true,
     "RoleArn": {
      "Fn::GetAtt": [
-      "AppPipelineRole3373CA60",
+      "pipelinePipelineRole7016E5DF",
       "Arn"
      ]
     },
@@ -192,7 +192,7 @@
          "Owner": "AyeshaOmer",
          "Repo": "ProjectName",
          "Branch": "main",
-         "OAuthToken": "{{resolve:secretsmanager:githubSecret:SecretString:::}}",
+         "OAuthToken": "{{resolve:secretsmanager:gitToken:SecretString:::}}",
          "PollForSourceChanges": true
         },
         "Name": "AyeshaOmer_ProjectName",
@@ -217,24 +217,24 @@
         },
         "Configuration": {
          "ProjectName": {
-          "Ref": "AppPipelineBuildsynthCdkBuildProject399F0FDA"
+          "Ref": "pipelinePipelineBuildSynthCdkBuildProject4237770A"
          },
-         "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"a2ef0bdab5c115912d24ceb2b87e7d905ad75c0155bf0117af66397a90898d5c\"}]"
+         "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"1f3387e05859e52d78bb738f16db30942ab14c14226b21a08aa192a7ffc5ca59\"}]"
         },
         "InputArtifacts": [
          {
           "Name": "AyeshaOmer_ProjectName_Source"
          }
         ],
-        "Name": "synth",
+        "Name": "Synth",
         "OutputArtifacts": [
          {
-          "Name": "synth_Output"
+          "Name": "Synth_Output"
          }
         ],
         "RoleArn": {
          "Fn::GetAtt": [
-          "AppPipelineCodeBuildActionRole0137EDEA",
+          "pipelineCodeBuildActionRole4D1FDB53",
           "Arn"
          ]
         },
@@ -254,19 +254,19 @@
         },
         "Configuration": {
          "ProjectName": {
-          "Ref": "AppPipelineUpdatePipelineSelfMutation1BCDA70B"
+          "Ref": "pipelineUpdatePipelineSelfMutation14A96D2F"
          },
          "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"167eef1378d6e6ad8c4c8da3461f900d6e066cd0916052ee812a8d94b87ad38c\"}]"
         },
         "InputArtifacts": [
          {
-          "Name": "synth_Output"
+          "Name": "Synth_Output"
          }
         ],
         "Name": "SelfMutate",
         "RoleArn": {
          "Fn::GetAtt": [
-          "AppPipelineCodeBuildActionRole0137EDEA",
+          "pipelineCodeBuildActionRole4D1FDB53",
           "Arn"
          ]
         },
@@ -278,14 +278,14 @@
     ]
    },
    "DependsOn": [
-    "AppPipelineRoleDefaultPolicyB0973B94",
-    "AppPipelineRole3373CA60"
+    "pipelinePipelineRoleDefaultPolicy16010F3E",
+    "pipelinePipelineRole7016E5DF"
    ],
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/Resource"
    }
   },
-  "AppPipelineBuildsynthCdkBuildProjectRole001BC4AF": {
+  "pipelinePipelineBuildSynthCdkBuildProjectRole0C39D18F": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -302,10 +302,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Role/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource"
    }
   },
-  "AppPipelineBuildsynthCdkBuildProjectRoleDefaultPolicy66DDDC06": {
+  "pipelinePipelineBuildSynthCdkBuildProjectRoleDefaultPolicyB3981181": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -336,7 +336,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AppPipelineBuildsynthCdkBuildProject399F0FDA"
+            "Ref": "pipelinePipelineBuildSynthCdkBuildProject4237770A"
            },
            ":*"
           ]
@@ -360,7 +360,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AppPipelineBuildsynthCdkBuildProject399F0FDA"
+            "Ref": "pipelinePipelineBuildSynthCdkBuildProject4237770A"
            }
           ]
          ]
@@ -394,7 +394,7 @@
           },
           ":report-group/",
           {
-           "Ref": "AppPipelineBuildsynthCdkBuildProject399F0FDA"
+           "Ref": "pipelinePipelineBuildSynthCdkBuildProject4237770A"
           },
           "-*"
          ]
@@ -418,7 +418,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AppPipelineArtifactsBucketB51ECEF4",
+          "pipelinePipelineArtifactsBucketC2CD5B5E",
           "Arn"
          ]
         },
@@ -428,7 +428,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AppPipelineArtifactsBucketB51ECEF4",
+             "pipelinePipelineArtifactsBucketC2CD5B5E",
              "Arn"
             ]
            },
@@ -441,18 +441,18 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AppPipelineBuildsynthCdkBuildProjectRoleDefaultPolicy66DDDC06",
+    "PolicyName": "pipelinePipelineBuildSynthCdkBuildProjectRoleDefaultPolicyB3981181",
     "Roles": [
      {
-      "Ref": "AppPipelineBuildsynthCdkBuildProjectRole001BC4AF"
+      "Ref": "pipelinePipelineBuildSynthCdkBuildProjectRole0C39D18F"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Role/DefaultPolicy/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource"
    }
   },
-  "AppPipelineBuildsynthCdkBuildProject399F0FDA": {
+  "pipelinePipelineBuildSynthCdkBuildProject4237770A": {
    "Type": "AWS::CodeBuild::Project",
    "Properties": {
     "Artifacts": {
@@ -461,7 +461,7 @@
     "Cache": {
      "Type": "NO_CACHE"
     },
-    "Description": "Pipeline step PipelineStack/Pipeline/Build/synth",
+    "Description": "Pipeline step PipelineStack/Pipeline/Build/Synth",
     "EncryptionKey": "alias/aws/s3",
     "Environment": {
      "ComputeType": "BUILD_GENERAL1_SMALL",
@@ -472,20 +472,20 @@
     },
     "ServiceRole": {
      "Fn::GetAtt": [
-      "AppPipelineBuildsynthCdkBuildProjectRole001BC4AF",
+      "pipelinePipelineBuildSynthCdkBuildProjectRole0C39D18F",
       "Arn"
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"cd Ayesha/\",\n        \"npm install -g aws-cdk\",\n        \"pip install -r requirements.txt\",\n        \"cdk synth\"\n      ]\n    }\n  },\n  \"artifacts\": {\n    \"base-directory\": \"Ayesha/cdk.out\",\n    \"files\": \"**/*\"\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"npm install -g aws-cdk\",\n        \" cd Ayesha/\",\n        \"pip install -r requirements.txt\",\n        \"cdk synth\"\n      ]\n    }\n  },\n  \"artifacts\": {\n    \"base-directory\": \"Ayesha/cdk.out\",\n    \"files\": \"**/*\"\n  }\n}",
      "Type": "CODEPIPELINE"
     }
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/Pipeline/Build/synth/CdkBuildProject/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Resource"
    }
   },
-  "AppPipelineCodeBuildActionRole0137EDEA": {
+  "pipelineCodeBuildActionRole4D1FDB53": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -496,7 +496,7 @@
        "Principal": {
         "AWS": {
          "Fn::GetAtt": [
-          "AppPipelineRole3373CA60",
+          "pipelinePipelineRole7016E5DF",
           "Arn"
          ]
         }
@@ -507,10 +507,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/CodeBuildActionRole/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/CodeBuildActionRole/Resource"
    }
   },
-  "AppPipelineCodeBuildActionRoleDefaultPolicyA68E9D34": {
+  "pipelineCodeBuildActionRoleDefaultPolicyE3C51929": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -525,13 +525,13 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AppPipelineBuildsynthCdkBuildProject399F0FDA",
+          "pipelinePipelineBuildSynthCdkBuildProject4237770A",
           "Arn"
          ]
         },
         {
          "Fn::GetAtt": [
-          "AppPipelineUpdatePipelineSelfMutation1BCDA70B",
+          "pipelineUpdatePipelineSelfMutation14A96D2F",
           "Arn"
          ]
         }
@@ -540,18 +540,18 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AppPipelineCodeBuildActionRoleDefaultPolicyA68E9D34",
+    "PolicyName": "pipelineCodeBuildActionRoleDefaultPolicyE3C51929",
     "Roles": [
      {
-      "Ref": "AppPipelineCodeBuildActionRole0137EDEA"
+      "Ref": "pipelineCodeBuildActionRole4D1FDB53"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/CodeBuildActionRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/CodeBuildActionRole/DefaultPolicy/Resource"
    }
   },
-  "AppPipelineUpdatePipelineSelfMutationRoleC89F0F7C": {
+  "pipelineUpdatePipelineSelfMutationRole91820177": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -568,10 +568,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Role/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role/Resource"
    }
   },
-  "AppPipelineUpdatePipelineSelfMutationRoleDefaultPolicyF79844B0": {
+  "pipelineUpdatePipelineSelfMutationRoleDefaultPolicy095404B8": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -602,7 +602,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AppPipelineUpdatePipelineSelfMutation1BCDA70B"
+            "Ref": "pipelineUpdatePipelineSelfMutation14A96D2F"
            },
            ":*"
           ]
@@ -626,7 +626,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AppPipelineUpdatePipelineSelfMutation1BCDA70B"
+            "Ref": "pipelineUpdatePipelineSelfMutation14A96D2F"
            }
           ]
          ]
@@ -660,7 +660,7 @@
           },
           ":report-group/",
           {
-           "Ref": "AppPipelineUpdatePipelineSelfMutation1BCDA70B"
+           "Ref": "pipelineUpdatePipelineSelfMutation14A96D2F"
           },
           "-*"
          ]
@@ -710,7 +710,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AppPipelineArtifactsBucketB51ECEF4",
+          "pipelinePipelineArtifactsBucketC2CD5B5E",
           "Arn"
          ]
         },
@@ -720,7 +720,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AppPipelineArtifactsBucketB51ECEF4",
+             "pipelinePipelineArtifactsBucketC2CD5B5E",
              "Arn"
             ]
            },
@@ -733,18 +733,18 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AppPipelineUpdatePipelineSelfMutationRoleDefaultPolicyF79844B0",
+    "PolicyName": "pipelineUpdatePipelineSelfMutationRoleDefaultPolicy095404B8",
     "Roles": [
      {
-      "Ref": "AppPipelineUpdatePipelineSelfMutationRoleC89F0F7C"
+      "Ref": "pipelineUpdatePipelineSelfMutationRole91820177"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource"
    }
   },
-  "AppPipelineUpdatePipelineSelfMutation1BCDA70B": {
+  "pipelineUpdatePipelineSelfMutation14A96D2F": {
    "Type": "AWS::CodeBuild::Project",
    "Properties": {
     "Artifacts": {
@@ -764,7 +764,7 @@
     },
     "ServiceRole": {
      "Fn::GetAtt": [
-      "AppPipelineUpdatePipelineSelfMutationRoleC89F0F7C",
+      "pipelineUpdatePipelineSelfMutationRole91820177",
       "Arn"
      ]
     },
@@ -774,7 +774,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "PipelineStack/AppPipeline/UpdatePipeline/SelfMutation/Resource"
+    "aws:cdk:path": "PipelineStack/pipeline/UpdatePipeline/SelfMutation/Resource"
    }
   },
   "CDKMetadata": {
