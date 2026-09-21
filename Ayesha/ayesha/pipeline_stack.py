@@ -32,12 +32,37 @@ class PipelineStack(Stack):
                 primary_output_directory = "Ayesha/cdk.out"               
             )
 
-        pipeline = pipelines_.CodePipeline(self,
+        MyPipeline = pipelines_.CodePipeline(self,
                 id = "pipeline",
                 synth = synth
         )
 
         alphaStage = PipelineStage(self, "Alpha")
-        pipeline.add_stage(alphaStage,
-            post = []
-        )
+        MyPipeline.add_stage(alphaStage,
+            post = [pipelines_.ShellStep(
+                        id = "Unit Tests",
+                        commands=["pip install pytest", "python3 -m pytest"]
+                    )]
+                )
+
+        # betaStage = PipelineStage(self, "Beta")
+        # MyPipeline.add_stage(betaStage,
+        #     post = [pipelines.ShellStep(id = "Functional Tests",
+        #     commands=[]
+        #     ]
+        # )
+        
+        # gemmaStage = PipelineStage(self, "Gemma")
+        # MyPipeline.add_stage(gemmaStage,
+        #     post = [pipelines.ShellStep(id = "Integration Tests",
+        #     commands=[]
+        #     ]
+        # )
+
+        # prodStage = PipelineStage(self, "Prod")
+        # MyPipeline.add_stage(prodStage,
+        #     pre=[pipelines.ManualApprovalStep("PromoteToProd",
+        #     # All options below are optional
+        #     comment="Please validate changes",
+        #     )]
+        # )

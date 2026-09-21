@@ -1,15 +1,21 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
+import sys
+from pathlib import Path
+
+# Goes up 2 levels: from unit/ -> tests/ -> Ayesha/
+sys.path.append(str(Path(__file__).resolve().parents[2]))
+
 from ayesha.ayesha_stack import AyeshaStack
 
 # example tests. To run these tests, uncomment this file along with the example
 # resource in ayesha/ayesha_stack.py
-def test_sqs_queue_created():
+def test_lambda_created():
     app = core.App()
     stack = AyeshaStack(app, "ayesha")
     template = assertions.Template.from_stack(stack)
 
-#     template.has_resource_properties("AWS::SQS::Queue", {
-#         "VisibilityTimeout": 300
-#     })
+    template.resource_count_is("AWS::Lambda::Function", 1)
+
+
