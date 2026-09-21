@@ -41,7 +41,11 @@ class PipelineStack(Stack):
         MyPipeline.add_stage(alphaStage,
             post = [pipelines_.ShellStep(
                         id = "Unit Tests",
-                        commands=["pip install pytest", "python3 -m pytest"]
+                        commands=[  "npm install -g aws-cdk",
+                                    "pip install -r requirements.txt",
+                                    "pip install pytest", 
+                                    "python3 -m pytest"
+                                ]
                     )]
                 )
 
