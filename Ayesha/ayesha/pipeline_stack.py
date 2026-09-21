@@ -37,37 +37,4 @@ class PipelineStack(Stack):
                 synth = synth
         )
 
-        alphaStage = PipelineStage(self, "Alpha")
-        MyPipeline.add_stage(alphaStage,
-            pre = [pipelines_.ShellStep(
-                        id = "Unit Tests",
-                        commands=[  "npm install -g aws-cdk",
-                                    "cd Ayesha/",
-                                    "pip install -r requirements.txt",
-                                    "pip install pytest", 
-                                    "python3 -m pytest"
-                                ]
-                    )]
-                )
-
-        # betaStage = PipelineStage(self, "Beta")
-        # MyPipeline.add_stage(betaStage,
-        #     post = [pipelines.ShellStep(id = "Functional Tests",
-        #     commands=[]
-        #     ]
-        # )
-        
-        # gemmaStage = PipelineStage(self, "Gemma")
-        # MyPipeline.add_stage(gemmaStage,
-        #     post = [pipelines.ShellStep(id = "Integration Tests",
-        #     commands=[]
-        #     ]
-        # )
-
-        # prodStage = PipelineStage(self, "Prod")
-        # MyPipeline.add_stage(prodStage,
-        #     pre=[pipelines.ManualApprovalStep("PromoteToProd",
-        #     # All options below are optional
-        #     comment="Please validate changes",
-        #     )]
-        # )
+       
