@@ -3,7 +3,7 @@ import os
 
 import aws_cdk as cdk
 
-from ayesha.pipeline_stack2 import PipelineStack
+from ayesha.pipeline_stack import PipelineStack
 
 
 app = cdk.App()

@@ -21,8 +21,6 @@ class AyeshaStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
-
-        # code goes here
         
         # https://docs.aws.amazon.com/cdk/api/v2/python/aws_cdk.aws_iam/Role.html
         user_role = iam_.Role(self, 
