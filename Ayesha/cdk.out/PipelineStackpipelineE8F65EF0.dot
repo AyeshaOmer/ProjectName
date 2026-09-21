@@ -27,6 +27,7 @@ digraph G {
 "UpdatePipeline.SelfMutate" -> "BEGIN Alpha";
 "BEGIN Alpha.id" [shape="cds", style="filled", fillcolor="#b7deff"];
 "END Alpha.id" [shape="cds", style="filled", fillcolor="#b7deff"];
+"Alpha.Unit Tests" -> "BEGIN Alpha.id";
 "Alpha.id.Deploy";
 "Alpha.id.Prepare" -> "Alpha.id.Deploy";
 "Alpha.id.Prepare";
@@ -35,9 +36,8 @@ digraph G {
 "BEGIN Alpha.id" -> "Alpha.id.Prepare";
 "Alpha.id.Deploy" -> "END Alpha.id";
 "Alpha.Unit Tests";
-"END Alpha.id" -> "Alpha.Unit Tests";
-"BEGIN Alpha" -> "BEGIN Alpha.id";
-"Alpha.Unit Tests" -> "END Alpha";
+"BEGIN Alpha" -> "Alpha.Unit Tests";
+"END Alpha.id" -> "END Alpha";
 "BEGIN Source" [shape="cds", style="filled", fillcolor="#b7deff"];
 "END Source" [shape="cds", style="filled", fillcolor="#b7deff"];
 "Source.AyeshaOmer/ProjectName";

@@ -25,7 +25,7 @@ class PipelineStack(Stack):
                 input = source,
                 commands = [
                         "npm install -g aws-cdk", 
-                        " cd Ayesha/", 
+                        "cd Ayesha/", 
                         "pip install -r requirements.txt",
                         "cdk synth"
                     ],
@@ -39,9 +39,10 @@ class PipelineStack(Stack):
 
         alphaStage = PipelineStage(self, "Alpha")
         MyPipeline.add_stage(alphaStage,
-            post = [pipelines_.ShellStep(
+            pre = [pipelines_.ShellStep(
                         id = "Unit Tests",
                         commands=[  "npm install -g aws-cdk",
+                                    "cd Ayesha/",
                                     "pip install -r requirements.txt",
                                     "pip install pytest", 
                                     "python3 -m pytest"

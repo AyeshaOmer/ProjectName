@@ -299,7 +299,7 @@
          "ProjectName": {
           "Ref": "pipelinePipelineBuildSynthCdkBuildProject4237770A"
          },
-         "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"1f3387e05859e52d78bb738f16db30942ab14c14226b21a08aa192a7ffc5ca59\"}]"
+         "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"7fa23123a57d36787165d0fb1c8513a4a6e5327f84ad3c8b9407dacb5baccc54\"}]"
         },
         "InputArtifacts": [
          {
@@ -390,6 +390,32 @@
       "Actions": [
        {
         "ActionTypeId": {
+         "Category": "Build",
+         "Owner": "AWS",
+         "Provider": "CodeBuild",
+         "Version": "1"
+        },
+        "Configuration": {
+         "ProjectName": {
+          "Ref": "pipelinePipelineAlphaUnitTestsUnitTests971BF4C5"
+         }
+        },
+        "InputArtifacts": [
+         {
+          "Name": "AyeshaOmer_ProjectName_Source"
+         }
+        ],
+        "Name": "Unit_Tests",
+        "RoleArn": {
+         "Fn::GetAtt": [
+          "pipelineCodeBuildActionRole4D1FDB53",
+          "Arn"
+         ]
+        },
+        "RunOrder": 1
+       },
+       {
+        "ActionTypeId": {
          "Category": "Deploy",
          "Owner": "AWS",
          "Provider": "CloudFormation",
@@ -454,7 +480,7 @@
           ]
          ]
         },
-        "RunOrder": 1
+        "RunOrder": 2
        },
        {
         "ActionTypeId": {
@@ -490,32 +516,6 @@
             "Ref": "AWS::Region"
            }
           ]
-         ]
-        },
-        "RunOrder": 2
-       },
-       {
-        "ActionTypeId": {
-         "Category": "Build",
-         "Owner": "AWS",
-         "Provider": "CodeBuild",
-         "Version": "1"
-        },
-        "Configuration": {
-         "ProjectName": {
-          "Ref": "pipelinePipelineAlphaUnitTestsUnitTests971BF4C5"
-         }
-        },
-        "InputArtifacts": [
-         {
-          "Name": "AyeshaOmer_ProjectName_Source"
-         }
-        ],
-        "Name": "Unit_Tests",
-        "RoleArn": {
-         "Fn::GetAtt": [
-          "pipelineCodeBuildActionRole4D1FDB53",
-          "Arn"
          ]
         },
         "RunOrder": 3
@@ -725,7 +725,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"npm install -g aws-cdk\",\n        \" cd Ayesha/\",\n        \"pip install -r requirements.txt\",\n        \"cdk synth\"\n      ]\n    }\n  },\n  \"artifacts\": {\n    \"base-directory\": \"Ayesha/cdk.out\",\n    \"files\": \"**/*\"\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"npm install -g aws-cdk\",\n        \"cd Ayesha/\",\n        \"pip install -r requirements.txt\",\n        \"cdk synth\"\n      ]\n    }\n  },\n  \"artifacts\": {\n    \"base-directory\": \"Ayesha/cdk.out\",\n    \"files\": \"**/*\"\n  }\n}",
      "Type": "CODEPIPELINE"
     }
    },
@@ -918,7 +918,7 @@
      ]
     },
     "Source": {
-     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"pip install pytest\",\n        \"python3 -m pytest\"\n      ]\n    }\n  }\n}",
+     "BuildSpec": "{\n  \"version\": \"0.2\",\n  \"phases\": {\n    \"build\": {\n      \"commands\": [\n        \"npm install -g aws-cdk\",\n        \"cd Ayesha/\",\n        \"pip install -r requirements.txt\",\n        \"pip install pytest\",\n        \"python3 -m pytest\"\n      ]\n    }\n  }\n}",
      "Type": "CODEPIPELINE"
     }
    },
