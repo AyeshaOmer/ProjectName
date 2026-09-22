@@ -34,8 +34,10 @@ digraph G {
 "Assets.FileAsset1" -> "AlphaStage.APP.Prepare";
 "BEGIN AlphaStage.APP" -> "AlphaStage.APP.Prepare";
 "AlphaStage.APP.Deploy" -> "END AlphaStage.APP";
+"AlphaStage.UnitTests";
+"END AlphaStage.APP" -> "AlphaStage.UnitTests";
 "BEGIN AlphaStage" -> "BEGIN AlphaStage.APP";
-"END AlphaStage.APP" -> "END AlphaStage";
+"AlphaStage.UnitTests" -> "END AlphaStage";
 "BEGIN Source" [shape="cds", style="filled", fillcolor="#b7deff"];
 "END Source" [shape="cds", style="filled", fillcolor="#b7deff"];
 "Source.AyeshaOmer/ProjectName";
