@@ -9,6 +9,7 @@ from aws_cdk import (
 from constructs import Construct
 from ayesha.pipeline_stage import MyPipelineStage
 
+
 class PipelineStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -36,5 +37,19 @@ class PipelineStack(Stack):
                 id = "pipeline",
                 synth = synth
         )
+
+        AlphaStage = MyPipelineStage(self, "UnitTestStage")
+        MyPipeline.add_stage(AlphaStage,
+                    post=["npm install -g aws-cdk", 
+                        "cd Ayesha/", 
+                        "pip install -r requirements.txt",
+                        "pip install pytest",
+                        "python3 -m pytest"])
+
+        # BetaStage = MyPipelineStage(self, "FunctionalTestStage")
+
+        # GemmaStage = MyPipelineStage(self, "IntegrationTestStage")
+
+        # ProdStage = MyPipelineStage(self, "ProdStage")
 
         
