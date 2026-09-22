@@ -195,30 +195,6 @@
           {}
         ]
       }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "grantAssumeRole": [
-          "*"
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addToPolicy": [
-          {}
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addToPrincipalPolicy": [
-          {}
-        ]
-      }
     }
   ],
   "/PipelineStack/CDKMetadata/Default": [
@@ -292,14 +268,6 @@
       "data": {
         "attachInlinePolicy": [
           "*"
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addToPrincipalPolicy": [
-          {}
         ]
       }
     },
@@ -464,14 +432,6 @@
       "data": {
         "attachToRole": [
           "*"
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addStatements": [
-          {}
         ]
       }
     },
@@ -792,14 +752,6 @@
           {}
         ]
       }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addStatements": [
-          {}
-        ]
-      }
     }
   ],
   "/PipelineStack/pipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
@@ -1032,20 +984,6 @@
       "data": {}
     }
   ],
-  "/PipelineStack/pipeline/Pipeline/AlphaStage/UnitTests/UnitTests": [
-    {
-      "type": "aws:cdk:analytics:construct",
-      "data": {}
-    },
-    {
-      "type": "aws:cdk:analytics:construct",
-      "data": {}
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {}
-    }
-  ],
   "/PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role/Resource": [
     {
       "type": "aws:cdk:logicalId",
@@ -1207,71 +1145,6 @@
       ]
     }
   ],
-  "/PipelineStack/pipeline/Pipeline/AlphaStage/UnitTests/UnitTests/Role": [
-    {
-      "type": "aws:cdk:analytics:construct",
-      "data": {
-        "roleName": "*",
-        "assumedBy": {
-          "principalAccount": "*",
-          "assumeRoleAction": "*"
-        }
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addToPrincipalPolicy": [
-          {}
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "attachInlinePolicy": [
-          "*"
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "attachInlinePolicy": [
-          "*"
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addToPrincipalPolicy": [
-          {}
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addToPrincipalPolicy": [
-          {}
-        ]
-      }
-    }
-  ],
-  "/PipelineStack/pipeline/Pipeline/AlphaStage/UnitTests/UnitTests/Resource": [
-    {
-      "type": "aws:cdk:logicalId",
-      "data": "pipelinePipelineAlphaStageUnitTestsEC5BC7A3"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
-    }
-  ],
   "/PipelineStack/pipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
     {
       "type": "aws:cdk:logicalId",
@@ -1344,82 +1217,10 @@
       }
     }
   ],
-  "/PipelineStack/pipeline/Pipeline/AlphaStage/UnitTests/UnitTests/Role/Resource": [
-    {
-      "type": "aws:cdk:logicalId",
-      "data": "pipelinePipelineAlphaStageUnitTestsRole38531208"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
-    }
-  ],
-  "/PipelineStack/pipeline/Pipeline/AlphaStage/UnitTests/UnitTests/Role/DefaultPolicy": [
-    {
-      "type": "aws:cdk:analytics:construct",
-      "data": "*"
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "attachToRole": [
-          "*"
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "attachToRole": [
-          "*"
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addStatements": [
-          {}
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addStatements": [
-          {}
-        ]
-      }
-    },
-    {
-      "type": "aws:cdk:analytics:method",
-      "data": {
-        "addStatements": [
-          {}
-        ]
-      }
-    }
-  ],
   "/PipelineStack/pipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
     {
       "type": "aws:cdk:logicalId",
       "data": "pipelinePipelineBuildSynthCdkBuildProjectRoleDefaultPolicyB3981181"
-    },
-    {
-      "type": "aws:cdk:creationStack",
-      "data": [
-        "...aws-cdk-lib...",
-        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
-      ]
-    }
-  ],
-  "/PipelineStack/pipeline/Pipeline/AlphaStage/UnitTests/UnitTests/Role/DefaultPolicy/Resource": [
-    {
-      "type": "aws:cdk:logicalId",
-      "data": "pipelinePipelineAlphaStageUnitTestsRoleDefaultPolicy90B9BF03"
     },
     {
       "type": "aws:cdk:creationStack",

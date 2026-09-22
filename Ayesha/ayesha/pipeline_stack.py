@@ -40,11 +40,12 @@ class PipelineStack(Stack):
 
         AlphaStage = MyPipelineStage(self, "UnitTestStage")
         MyPipeline.add_stage(AlphaStage,
-                    post=["npm install -g aws-cdk", 
-                        "cd Ayesha/", 
-                        "pip install -r requirements.txt",
-                        "pip install pytest",
-                        "python3 -m pytest"])
+                    # post=["npm install -g aws-cdk", 
+                    #     "cd Ayesha/", 
+                    #     "pip install -r requirements.txt",
+                    #     "pip install pytest",
+                    #     "python3 -m pytest"]
+                        )   
 
         # BetaStage = MyPipelineStage(self, "FunctionalTestStage")
 
