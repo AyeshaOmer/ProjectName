@@ -1,53 +1,41 @@
 {
   "version": "54.0.0",
   "artifacts": {
-    "assembly-PipelineStack-AlphaStage": {
-      "type": "cdk:cloud-assembly",
-      "properties": {
-        "directoryName": "assembly-PipelineStack-AlphaStage",
-        "displayName": "PipelineStack/AlphaStage"
-      }
-    },
-    "PipelineStack.assets": {
+    "PipelineStackAlphaStageAPP1DFF29CC.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "PipelineStack.assets.json",
+        "file": "PipelineStackAlphaStageAPP1DFF29CC.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "PipelineStack": {
+    "PipelineStackAlphaStageAPP1DFF29CC": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "PipelineStack.template.json",
+        "templateFile": "PipelineStackAlphaStageAPP1DFF29CC.template.json",
         "terminationProtection": false,
-        "validateOnSynth": false,
+        "validateOnSynth": true,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/04d7ab325933163c9a880024d04370db8248f6c271fb9aa101d41838dd600986.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5176589203efa58cb99b62e89a1aa1ae0a4cf01b1c91958c846444761d6c84a9.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "PipelineStack.assets"
+          "PipelineStackAlphaStageAPP1DFF29CC.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
           "requiresBootstrapStackVersion": 8,
           "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
-        }
+        },
+        "stackName": "AlphaStage-APP"
       },
       "dependencies": [
-        "PipelineStack.assets"
+        "PipelineStackAlphaStageAPP1DFF29CC.assets"
       ],
-      "additionalMetadataFile": "PipelineStack.metadata.json",
-      "displayName": "PipelineStack"
-    },
-    "Tree": {
-      "type": "cdk:tree",
-      "properties": {
-        "file": "tree.json"
-      }
+      "additionalMetadataFile": "PipelineStackAlphaStageAPP1DFF29CC.metadata.json",
+      "displayName": "PipelineStack/AlphaStage/APP"
     },
     "aws-cdk-lib/feature-flag-report": {
       "type": "cdk:feature-flag-report",
