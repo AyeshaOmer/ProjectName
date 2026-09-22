@@ -40,18 +40,18 @@ class PipelineStack(Stack):
         Alpha = MyPipelineStage(self,"AlphaStage")
         MyPipeline.add_stage(
                 stage = Alpha, 
-                # post = [pipelines_.ShellStep(
-                #         id = "UnitTests",             
-                #         commands = [
-                #             "npm install -g aws-cdk", 
-                #             "cd Ayesha/", 
-                #             "pip install -r requirements.txt",
-                #             "pip install pytest",
-                #             "python3 -m pytest"
-                #         ],
-                #         primary_output_directory = "Ayesha/cdk.out"               
-                #     )
-                # ]
+                post = [pipelines_.ShellStep(
+                        id = "UnitTests",             
+                        commands = [
+                            "npm install -g aws-cdk", 
+                            "cd Ayesha/", 
+                            "pip install -r requirements.txt",
+                            "pip install pytest",
+                            "python3 -m pytest"
+                        ],
+                        primary_output_directory = "Ayesha/cdk.out"               
+                    )
+                ]
             )
         
         # Beta = MyPipelineStage(self, "Beta Stage")
